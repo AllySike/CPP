@@ -58,7 +58,13 @@ void	Karen::complain(std::string level)
 		"WARNING",
 		"ERROR"
 	};
-	switch_case = std::find(levels, levels + 4, level) - levels;
+	switch_case = 0;
+	while (switch_case < 4)
+	{
+		if (levels[switch_case] == level)
+			break ;
+		switch_case++;
+	}
 	switch (switch_case)
 	{
 		case 0:

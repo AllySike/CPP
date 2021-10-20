@@ -15,7 +15,6 @@
 
 #include <iostream>
 #include <string>
-#include <algorithm>
 
 class Karen {
 	public:
