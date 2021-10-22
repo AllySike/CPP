@@ -18,7 +18,7 @@ ScavTrap::ScavTrap()
 	this->hitpoints = 100;
 	this->energy = 50;
 	this->damage = 20;
-	std::cout << "\tDefault scav constructor called" << std::endl;
+	std::cout << "  Default scav constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string name)
@@ -27,20 +27,20 @@ ScavTrap::ScavTrap(const std::string name)
 	this->hitpoints = 100;
 	this->energy = 50;
 	this->damage = 20;
-	std::cout << "\tConstructor scav with name "
+	std::cout << "  Constructor scav with name "
 		<< name << " called" << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "\tscav Destructor for " << this->name
+	std::cout << "  scav Destructor for " << this->name
 		<< " called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& scavtrap)
 {
 	*this = scavtrap;
-	std::cout << "\tscav Copy constructor called" << std::endl;
+	std::cout << "  scav Copy constructor called" << std::endl;
 }
 
 ScavTrap& ScavTrap::operator = (const ScavTrap& scavTrap)
@@ -49,7 +49,7 @@ ScavTrap& ScavTrap::operator = (const ScavTrap& scavTrap)
 	this->energy = scavTrap.energy;
 	this->hitpoints = scavTrap.hitpoints;
 	this->name = scavTrap.name;
-	std::cout << "\tscav Overload assignment for " << scavTrap.name
+	std::cout << "  scav Overload assignment for " << scavTrap.name
 		<< " called" << std::endl;
 	return (*this);
 }
