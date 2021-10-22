@@ -21,7 +21,7 @@ NAME 		=	clapTrap
 
 all:			$(NAME)
 
-$(NAME):		$(OBJ)
+$(NAME):		$(OBJ) Makefile
 				$(CC) $(OBJ) $(FLAGS) -o $(NAME)
 
 -include $(DEPS)
