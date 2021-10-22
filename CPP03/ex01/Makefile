@@ -21,14 +21,14 @@ OBJ			=	$(addprefix $(DIR_OBJ), $(SRC:%.cpp=%.o))
 DEPS		=	$(addprefix $(DIR_DEP), $(SRC:%.cpp=%.d))
 NAME 		=	ClapScavTrap
 
-all:			$(NAME) Makefile
+all:			$(NAME)
 
 $(NAME):		$(OBJ)
 				@$(CC) $(OBJ) $(FLAGS) -o $(NAME)
 
 -include $(DEPS)
 
-$(DIR_OBJ)%.o: %.cpp
+$(DIR_OBJ)%.o: %.cpp Makefile
 				@mkdir -p $(DIR_OBJ)
 				@mkdir -p $(DIR_DEP)
 				@${CC} ${FLAGS} -o $@ -c -MT $@ $< ; mv $(DIR_OBJ)*.d $(DIR_DEP)
