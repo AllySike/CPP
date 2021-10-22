@@ -21,12 +21,12 @@ NAME 		=	clapTrap
 
 all:			$(NAME)
 
-$(NAME):		$(OBJ) Makefile
+$(NAME):		$(OBJ)
 				$(CC) $(OBJ) $(FLAGS) -o $(NAME)
 
 -include $(DEPS)
 
-$(DIR_OBJ)%.o: %.cpp
+$(DIR_OBJ)%.o: %.cpp Makefile
 				mkdir -p $(DIR_OBJ)
 				mkdir -p $(DIR_DEP)
 				${CC} ${FLAGS} -o $@ -c -MT $@ $< ; mv $(DIR_OBJ)*.d $(DIR_DEP)
