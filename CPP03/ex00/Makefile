@@ -14,7 +14,7 @@ CC			=	clang++
 FLAGS		=	-g -Wall -Wextra -Werror -MMD -std=c++98
 DIR_OBJ		=	obj/
 DIR_DEP		=	dep/
-SRC			=	main.cpp
+SRC			=	main.cpp ClapTrap.cpp
 OBJ			=	$(addprefix $(DIR_OBJ), $(SRC:%.cpp=%.o))
 DEPS		=	$(addprefix $(DIR_DEP), $(SRC:%.cpp=%.d))
 NAME 		=	fixed
