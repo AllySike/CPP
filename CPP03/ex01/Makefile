@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 CC			=	clang++
-FLAGS		=	-g -Wall -Wextra -Werror -MMD -std=c++98
+FLAGS		=	-g -Wall -Wextra -Werror -MMD -std=c++98  -Wshadow -Wno-shadow
 DIR_OBJ		=	obj/
 DIR_DEP		=	dep/
 SRC			=	main.cpp \

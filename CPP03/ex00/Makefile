@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 CC			=	clang++
-FLAGS		=	-g -Wall -Wextra -Werror -MMD -std=c++98
+FLAGS		=	-g -Wall -Wextra -Werror -MMD -std=c++98 -Wshadow -Wno-shadow
 DIR_OBJ		=	obj/
 DIR_DEP		=	dep/
 SRC			=	main.cpp ClapTrap.cpp
@@ -22,14 +22,14 @@ NAME 		=	clapTrap
 all:			$(NAME)
 
 $(NAME):		$(OBJ)
-				$(CC) $(OBJ) $(FLAGS) -o $(NAME)
+				@$(CC) $(OBJ) $(FLAGS) -o $(NAME)
 
 -include $(DEPS)
 
 $(DIR_OBJ)%.o: %.cpp Makefile
-				mkdir -p $(DIR_OBJ)
-				mkdir -p $(DIR_DEP)
-				${CC} ${FLAGS} -o $@ -c -MT $@ $< ; mv $(DIR_OBJ)*.d $(DIR_DEP)
+				@mkdir -p $(DIR_OBJ)
+				@mkdir -p $(DIR_DEP)
+				@${CC} ${FLAGS} -o $@ -c -MT $@ $< ; mv $(DIR_OBJ)*.d $(DIR_DEP)
 
 clean:
 				@rm -rf $(DIR_DEP)
