@@ -25,13 +25,13 @@ Dog::~Dog()
 
 Dog::Dog(const Dog &src)
 {
-	this->type = src.type;
+	this->type = src.getType();
 	std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog &src)
 {
-	this->type = src.type;
+	this->type = src.getType();
 	std::cout << "Dog overload  assignment called" << std::endl;
 	return (*this);
 }
