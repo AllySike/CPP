@@ -13,9 +13,9 @@
 #include "DiamondTrap.hpp"
 
 
-DiamondTrap::DiamondTrap()
+DiamondTrap::DiamondTrap(): ClapTrap(name + "_clap"), ScavTrap(name), FlagTrap(name)
 {
-	ClapTrap::name = "_clap_name";
+	// ClapTrap::name = "_clap_name";
 	this->name = "";
 	this->hitpoints = FlagTrap::hitpoints;
 	this->energy = ScavTrap::energy;
