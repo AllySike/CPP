@@ -74,8 +74,8 @@ void Bureaucrat::check() const
 		throw Bureaucrat::GradeTooHighException();
 }
 
-std::ostream	&operator<<( std::ostream &ostr, const Bureaucrat &instance )
+std::ostream	&operator<<( std::ostream &ostr, const Bureaucrat &src )
 {
-	ostr << instance.getName() << ", Bureaucrat grade " << instance.getGrade();
+	ostr << src.getName() << ", Bureaucrat grade " << src.getGrade();
 	return ostr;
 }

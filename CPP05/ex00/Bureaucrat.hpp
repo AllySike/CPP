@@ -55,6 +55,6 @@ class Bureaucrat
 		void check() const;
 };
 
-std::ostream	&operator<<( std::ostream &ostr, const Bureaucrat &instance );
+std::ostream	&operator<<( std::ostream &ostr, const Bureaucrat &src );
 
 #endif
