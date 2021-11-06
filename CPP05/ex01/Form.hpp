@@ -27,7 +27,7 @@ class Form
 		Form& operator=(const Form& src);
 		bool beSigned(const Bureaucrat& src);
 		bool beExecuted(const Bureaucrat& src);
-		void exec();
+		void execute();
 
 		bool getSigned() const;
 		int getSignReq() const;

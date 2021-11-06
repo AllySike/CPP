@@ -97,7 +97,7 @@ bool Bureaucrat::executeForm(Form& form) const
 {
 	try
 	{
-		form.exec();
+		form.execute();
 		std::cout << this->name << " is executing form "
 			<< form.getName() << std::endl;
 		return (true);

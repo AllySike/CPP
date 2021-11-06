@@ -100,7 +100,7 @@ std::ostream &operator<<(std::ostream &ostr, const Form& src)
 	return ostr;
 }
 
-void Form::exec()
+void Form::execute()
 {
 	if (this->exec_req < Form::max)
 		throw Form::GradeTooHighException();
