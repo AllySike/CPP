@@ -15,10 +15,10 @@ FLAGS		=	-g -Wall -Wextra -Werror -MMD -std=c++98 -Wshadow -Wno-shadow
 DIR_OBJ		=	obj/
 DIR_DEP		=	dep/
 SRC			=	main.cpp \
-				Bureaucrat.cpp
+				TypeConvert.cpp
 OBJ			=	$(addprefix $(DIR_OBJ), $(SRC:%.cpp=%.o))
 DEPS		=	$(addprefix $(DIR_DEP), $(SRC:%.cpp=%.d))
-NAME 		=	bureaucrat
+NAME 		=	convert
 
 all:			$(NAME)
 
