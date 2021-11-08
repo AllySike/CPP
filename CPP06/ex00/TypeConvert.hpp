@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <cmath>
+# include <limits>
 
 class TypeConvert
 {
@@ -56,6 +57,8 @@ class TypeConvert
 			void printFloat() const;
 			void printDouble() const;
 			bool convertable(double numb) const;
+			bool intConvertable(double numb) const;
+			std::string printDot(double numb) const;
 			void addNumericValue(char* input);
 			static const int _nontype = -1;
 			static const int _chartype = 0;

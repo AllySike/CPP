@@ -55,7 +55,7 @@ void TypeConvert::input(char* input)
 	else if (this->_type == _inttype)
 		this->_int = atoi(input);
 	else if (this->_type == _floattype)
-		this->_double = atof(input);
+		this->_float = atof(input);
 	else if (this->_type == _doubletype)
 		this->_double = atof(input);
 	printValues();
@@ -129,6 +129,28 @@ bool TypeConvert::convertable(double numb) const
 	return (true);
 }
 
+bool TypeConvert::intConvertable(double numb) const
+{
+	if (numb <= std::numeric_limits<int>::max()
+		&& numb >= std::numeric_limits<int>::min()
+		&& numb != std::numeric_limits<double>::infinity()
+		&& -numb != std::numeric_limits<double>::infinity()
+		&& numb != std::numeric_limits<double>::quiet_NaN())
+		return (true);
+	else
+	{
+		std::cout << "int: impossible\n";
+		return (false);
+	}
+}
+
+std::string TypeConvert::printDot(double numb) const
+{
+	if (numb == static_cast<int>(numb))
+		return (".0");
+	return ("");
+}
+
 void TypeConvert::printChar() const
 {
 	if (this->_type == _chartype)
@@ -147,20 +169,34 @@ void TypeConvert::printInt() const
 		std::cout << "int: " << static_cast<int>(this->_char) << std::endl;
 	if (this->_type == _inttype)
 		std::cout << "int: " << this->_int << std::endl;
-	if (this->_type == _floattype)
+	if (this->_type == _floattype && intConvertable(this->_float))
 		std::cout << "int: " << static_cast<int>(this->_float) << std::endl;
-	if (this->_type == _doubletype)
+	if (this->_type == _doubletype && intConvertable(this->_double))
 		std::cout << "int: " << static_cast<int>(this->_double) << std::endl;
 }
 
 void TypeConvert::printFloat() const
 {
-
+	if (this->_type == _chartype)
+		std::cout << "float: " << static_cast<float>(this->_char) << ".0f" << std::endl;
+	if (this->_type == _inttype)
+		std::cout << "float: " << static_cast<float>(this->_int) << ".0f" << std::endl;
+	if (this->_type == _floattype)
+		std::cout << "float: " << this->_float << printDot(this->_float) << "f" << std::endl;
+	if (this->_type == _doubletype)
+		std::cout << "float: " << static_cast<float>(this->_double) << printDot(this->_double) << "f" << std::endl;
 }
 
 void TypeConvert::printDouble() const
 {
-
+	if (this->_type == _chartype)
+		std::cout << "double: " << static_cast<double>(this->_char) << ".0" << std::endl;
+	if (this->_type == _inttype)
+		std::cout << "double: " << static_cast<float>(this->_int) << ".0" << std::endl;
+	if (this->_type == _floattype)
+		std::cout << "double: " << static_cast<float>(this->_float) << printDot(this->_float) << std::endl;
+	if (this->_type == _doubletype)
+		std::cout << "double: " << this->_double << printDot(this->_double) << std::endl;
 }
 
 void TypeConvert::printValues() const
