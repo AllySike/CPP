@@ -60,8 +60,7 @@ void identify(Base& p)
 	try
 	{
 		A &a = dynamic_cast<A&>(p);
-		(void)a;
-		std::cout << "A\n";
+		std::cout << a;
 	}
 	catch(const std::exception& e)
 	{
