@@ -45,7 +45,6 @@ int	main( void )
 
 
 	Span	span2(5000000);
-	/* Span	span2(500); */
 
 	span2.addNumber(3);
 	std::cout << span2 << std::endl;
@@ -61,5 +60,15 @@ int	main( void )
 	vect.push_back(-2);
 	span3.addNumberByIterator(vect.begin(), vect.end());
 	std::cout << span3 << std::endl;
+
+	std::cout << "\nExample from subject\n";
+	Span sp = Span(5);
+	sp.addNumber(5);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
 }
 
