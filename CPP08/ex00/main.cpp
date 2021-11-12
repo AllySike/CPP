@@ -36,7 +36,6 @@ int	main( void )
 	displayIterator(it, vect.end());
 
 	std::vector<char>			vector;
-	std::vector<char>::iterator	iterator;
 
 	for (int i = 97; i < 123; i++)
 		vect.push_back(i);
