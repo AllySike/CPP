@@ -72,3 +72,4 @@ int	main( void )
 	std::cout << sp.longestSpan() << std::endl;
 }
 
+//clang++ -Wall -Wextra -Werror -std=c++98 main.cpp span.cpp && ./a.out
