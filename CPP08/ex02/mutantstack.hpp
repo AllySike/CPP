@@ -14,19 +14,38 @@
 # define MUTANTSTACK_HPP
 
 # include <stack>
+# include "mutantstack.cpp"
 
-template <typename T>
+template<typename T>
 class MutantStack: public std::stack<T>
 {
 	public:
-		// MutantStack();
-		// MutantStack(const MutantStack<T>& src);
-		// MutantStack<T>& operator=(const MutantStack<T>& src);
-		// ~MutantStack();
+		MutantStack(): std::stack<T>(){}
+
+		MutantStack(const MutantStack<T>& src): std::stack<T>(src)
+		{
+			(void)src;
+			return (*this);
+		}
+
+		MutantStack<T>& operator=(const MutantStack<T>& src)
+		{
+			(void)src;
+		}
+
+		~MutantStack(){}
 
 		typedef typename std::stack<T>::container_type::iterator iterator;
-		iterator begin() const;
-		iterator end() const;
+
+		iterator begin()
+		{
+			return (this->c.begin());
+		}
+
+		iterator end()
+		{
+			return (this->c.end());
+		}
 };
 
 #endif
