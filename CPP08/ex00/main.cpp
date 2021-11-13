@@ -44,3 +44,5 @@ int	main( void )
 	it = easyfind(vect, 'F');
 	displayIterator(it, vect.end());
 }
+
+//clang++ -Wall -Wextra -Werror -std=c++98 main.cpp && ./a.out
